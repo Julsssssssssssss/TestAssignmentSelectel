@@ -1,0 +1,15 @@
+<section class="header">
+    <div class="header-title">
+        <h2>Раздел: {{ getCurrentPageTitle() }}</h2>
+    </div>
+    @if (isSecondPage()) {
+        <div class="header-right">
+            <div class="header-title-2">
+                <h2>Выбрано пунктов: {{ headerState().selectedCount }}</h2>
+            </div>
+            <div class="header-title-3">
+                <h2>Общее значение: {{ headerState().totalValue }}</h2>
+            </div>
+        </div>
+    }
+</section>

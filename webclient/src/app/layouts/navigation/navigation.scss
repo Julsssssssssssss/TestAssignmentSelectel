@@ -1,0 +1,105 @@
+:host {
+  display: block;
+  width: 200px;
+  min-width: 200px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  :host {
+    width: 100%;
+    min-width: 0;
+    flex-shrink: 0;
+  }
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  min-width: 200px;
+  max-width: 200px;
+  min-height: 100%;
+  padding: 1rem 0;
+  background-color: color-mix(in srgb, var(--mat-sys-primary) 8%, white);
+  border-right: 1px solid color-mix(in srgb, var(--mat-sys-primary) 25%, transparent);
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .navigation {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    min-height: 0;
+    padding: 0.5rem 0;
+    border-right: none;
+    border-bottom: 1px solid color-mix(in srgb, var(--mat-sys-primary) 25%, transparent);
+  }
+}
+
+.navigation a[mat-list-item] {
+  border-radius: 0;
+  box-sizing: border-box;
+}
+
+.navigation a[mat-list-item]:hover {
+  border-radius: 0;
+  background-color: color-mix(in srgb, var(--mat-sys-primary) 15%, white);
+}
+
+.navigation a[mat-list-item].active {
+  background-color: color-mix(in srgb, var(--mat-sys-primary) 18%, white);
+  font-weight: 600;
+}
+
+.navigation .type-1,
+.navigation .type-2 {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border: none;
+  background: transparent;
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.navigation .type-1:hover,
+.navigation .type-2:hover {
+  background-color: color-mix(in srgb, var(--mat-sys-primary) 15%, white);
+}
+
+.navigation h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #333;
+}
+
+:host-context(body.theme-dark) .navigation {
+  background-color: #1a1a1a;
+  border-right-color: rgba(255, 255, 255, 0.06);
+}
+
+:host-context(body.theme-dark) .navigation a[mat-list-item] {
+  color: #40E0D0 !important;
+  margin: 0;
+  border-radius: 0;
+  background-color: transparent !important;
+}
+
+:host-context(body.theme-dark) .navigation a[mat-list-item]:hover {
+  background-color: rgba(0, 96, 100, 0.6) !important;
+  color: #40E0D0 !important;
+  border-radius: 0;
+}
+
+:host-context(body.theme-dark) .navigation a[mat-list-item].active {
+  background-color: rgba(0, 96, 100, 0.75) !important;
+  color: #40E0D0 !important;
+  font-weight: 600;
+  border-radius: 0;
+}
